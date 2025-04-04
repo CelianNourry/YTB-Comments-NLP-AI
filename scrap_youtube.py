@@ -50,7 +50,7 @@ for comment in driver.find_elements(By.CSS_SELECTOR, "#content-text"):
 driver.quit()
 
 # Sauvegarder les commentaires dans un fichier texte
-filename = "./results/" + re.sub(r'[^a-zA-Z0-9]', '_', VIDEO_URL) + ".txt"
+filename = re.sub(r'[^a-zA-Z0-9]', '_', VIDEO_URL) + ".txt"
 with open(filename, "w", encoding="utf-8") as f:
     for comment in comments:
         f.write(comment + "\n\n")
