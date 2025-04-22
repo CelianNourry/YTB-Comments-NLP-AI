@@ -1,0 +1,198 @@
+\documentclass[a4paper, 12pt, openany]{book}
+\usepackage{graphicx}
+\usepackage{listings}
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\begin{document}
+\begin{titlepage}
+  \begin{center}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \includegraphics[height=1.5cm]{images/logo_liv.png}
+    \end{tabular*}
+    \small 
+    \rule{\textwidth}{.5pt}~\\
+    \large 
+    \textsc{Université Paris 8 - Vincennes à Saint-Denis}\vspace{0.5cm}\\
+    \textbf{Licence informatique \& vidéoludisme}\vspace{3.0cm}\\
+    \Large
+    \textbf{Classification automatique de commentaires YouTube}\vspace{1.5cm}\\
+    \large
+    \textbf{Celian \textsc{Nourry}}\vspace{0.5cm}\\
+    Date de rendu : le 22/04/2025\vspace{1.75cm}\\
+  \end{center}\vspace{1.5cm}~\\
+  \begin{tabular}{ll}
+    \hspace{-0.45cm}Enseignante ~:~&~Anna \textsc{Pappa}\\
+  \end{tabular}
+\end{titlepage}
+%% Table des matières
+\renewcommand{\contentsname}{Table des matières}
+\tableofcontents
+
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+\section*{Objectifs du projet}
+\addcontentsline{toc}{section}{Objectifs du projet}
+Le but du projet est de récupérer des commentaires de vidéos YouTube, de les annoter automatiquement pour les classer soit en tant que commentaire disant des choses positives, soit des choses négatives. Si un commentaire n'est ni positif ni négatif, il n'est pas compté. Après avoir récolté des commentaires annotés, un modèle d'apprentissage devra apprendre à prédire ces annotations produites automatiquement, avec comme seule information les commentaires (et non l'annotation).
+\section*{Organisation du projet}
+\addcontentsline{toc}{section}{Organisation du projet}
+Le projet se sépare en deux fichiers. YTB-Comments-to-CSV.py pour scraper, annoter, et créer un fichier.csv de commentaires YouTube. YTB-Comments-Classification.ipynb pour l'apprentissage automatique du fichier .csv.
+
+\chapter*{Collecte des données}
+\addcontentsline{toc}{chapter}{Collecte des données}
+\section*{Sélection des vidéos}
+\addcontentsline{toc}{section}{Sélection des vidéos}
+
+La sélection des vidéos est une liste d'URL de vidéos sur des sujets variés.
+
+\section*{Scraping des commentaires}
+\addcontentsline{toc}{section}{Scraping des commentaires}
+Les bibliothèques utilisées sont selenium et ChromeDriverManager.
+
+\begin{lstlisting}[language=Python]
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
+\end{lstlisting}
+
+La fonction utilisée pour le scraping prend une liste d'URL en argument et renvoie une liste des commentaires scrapés. Le driver de Chrome pour naviguer sur Internet est installé automatiquement. La page est scrollée jusqu'à ce qu'on ne puisse plus, puis après chaque texte avec la balise "#content-text" est ajoutée à la liste de commentaires.
+
+\section*{Pré-traitement initial}
+\addcontentsline{toc}{section}{Pré-traitement initial}
+
+La fonction clean() prend une liste de commentaires et renvoie une liste de commentaires nettoyés. Elle enlève les majuscules et les accents.
+
+\chapter*{Annotation automatique}
+\addcontentsline{toc}{chapter}{Annotation automatique}
+\section*{Annotation}
+\addcontentsline{toc}{section}{Annotation}
+
+L'annotation fonctionne de façon assez naïve et simple. Plusieurs listes sont définies qui représentent des dictionnaires de mots. Il y a les listes POSITIF, POSITIVE VERBS, NEGATIVE, NEGATIVE VERBS qui déterminent les mots/verbes positifs/négatifs. Il y a également les listes CURSE WORDS, représentant les insultes. Il y a INTENSIFIER qui est une liste de mots amplificateurs. Enfin, il y a la liste NEGATION qui représente les mots de négation.
+
+La fonction annotate() prend une liste de commentaires et renvoie une liste de structures de données "Comment". Celle-ci est composée de "text" étant le commentaire et "polarity" étant un entier entre 0 (positif) et 1 (négatif)
+
+\begin{lstlisting}[language=Python]
+@dataclass
+class Comment:
+    text: str
+    polarity: int
+\end{lstlisting}
+
+Chaque commentaire est tokenisé en phrase, et chaque mot d'une phrase est tokenisé grâce à nltk.tokenize. Chaque commentaire a un score de polarité initialisé au début à zéro. Si un des mots d'une phrase commence par l'un des mots des listes de mots/verbes positifs, le score de polarité du commentaire augmente. Il augmente plus si le mot d'avant commence par un des mots de la liste d'amplificateur. Cependant, si le mot avant le mot/verbe positif commence par l'un des mots de la liste de négation, le score de polarité s'inverse. Cela marche de la même manière pour les mots/verbes négatifs. Les insultes comptent aussi pour une polarité négative importante.
+
+À la fin de l'analyse de tous les mots de la phrase, si le score de polarité est supérieur à 0, le commentaire est considéré comme positif. S'il est inférieur à 0, le commentaire est considéré comme négatif. Si le score de polarité est nul, le commentaire est ignoré car nous ne traitons que les commentaires avec une polarité.
+
+Un commentaire positif a 0 sur la polarité de la structure de données "Comment", et 1 s'il est négatif.
+
+\section*{Limites de l'annotation}
+\addcontentsline{toc}{section}{Limites de l'annotation}
+Cette annotation automatique est assez limitée car elle n'annote pas bien les phrases plus sophistiquées. C'est d'ailleurs probablement pourquoi la précision du modèle d'apprentissage sur ces commentaires annotés que nous allons voir n'est pas idéale.
+
+\chapter*{Préparation pour l'apprentissage automatique}
+\addcontentsline{toc}{chapter}{Préparation pour l'apprentissage automatique}
+\section*{Vectorisation des commentaires}
+\addcontentsline{toc}{section}{Vectorisation des commentaires}
+
+Puisqu'un modèle d'apprentissage ne peut pas traiter des données textuelles, nous avons besoin de les vectoriser. Pour cela, nous utilisons CountVectorizer de sklearn pour faire un Bag of Words. Cela génère un dictionnaire contenant l’ensemble des mots présents dans les commentaires, et chaque vecteur indique, pour un commentaire donné, la présence ou l’absence de ces mots.
+
+\section*{Création du fichier CSV}
+\addcontentsline{toc}{section}{Création du fichier CSV}
+
+Nous créons un fichier CSV sous la forme suivante : La première colonne est la polarité tandis que toutes les colonnes restantes sont les mots du dictionnaire du Bag of Word. La première ligne contient donc 0 ou 1 selon la polarité du commentaire (annoté automatiquement), et les lignes restantes ont 1 ou 0 selon si le mot correspondant est dans le commentaire.
+
+\chapter*{Classification par apprentissage automatique}
+\addcontentsline{toc}{chapter}{Classification par apprentissage automatique}
+
+\include{apprentissage.tex}
+
+\chapter*{Conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
+Ce projet avait pour objectif de construire un programme complet permettant de collecter, annoter automatiquement et faire de l'apprentissage automatique des commentaires YouTube en fonction de leur polarité. À partir d’un scraping ciblé, les données ont été nettoyées puis annotées à l’aide d’une méthode lexicale fondée sur des règles simples. Ces annotations ont ensuite servi de base d’apprentissage pour entraîner un modèle de classification supervisée.
+
+Les résultats obtenus montrent qu’il est possible d’automatiser une première phase d’analyse de sentiment à partir de données brutes, même en l’absence d’annotations humaines. Néanmoins, la qualité du classificateur reste étroitement liée à la fiabilité de l’annotation automatique, qui constitue une approximation.
+\end{document}
